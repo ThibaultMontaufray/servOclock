@@ -1,0 +1,210 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.servodroid.servoclock.MainActivity">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="0dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:gravity="center"
+        android:padding="0dp"
+        android:paddingBottom="0dp"
+        android:paddingEnd="0dp"
+        android:paddingLeft="0dp"
+        android:paddingRight="0dp"
+        android:paddingStart="0dp"
+        android:paddingTop="0dp"
+        android:background="@drawable/background"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/imageButtonTarget"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/transparent"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/layoutButton"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/layoutButton"
+            app:srcCompat="@android:drawable/ic_menu_mylocation" />
+
+        <ImageButton
+            android:id="@+id/imageButtonReset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/transparent"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/layoutButton"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/layoutButton"
+            app:srcCompat="@android:drawable/ic_popup_sync" />
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/layoutButton"
+            android:layout_width="82dp"
+            android:layout_height="71dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp">
+
+            <ImageButton
+                android:id="@+id/imageButtonStop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@android:color/transparent"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/imageButtonPause"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/control_stop" />
+
+            <ImageButton
+                android:id="@+id/imageButtonPause"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@android:color/transparent"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.517"
+                app:srcCompat="@drawable/control_pause" />
+
+            <ImageButton
+                android:id="@+id/imageButtonStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@android:color/transparent"
+                android:backgroundTint="@android:color/transparent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/control_play" />
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/layoutChrono"
+            android:layout_width="368dp"
+            android:layout_height="412dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/layoutButton"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.666"
+            android:layout_marginStart="8dp"
+            tools:layout_editor_absoluteY="-10dp">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintHorizontal_bias="0.503"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/friday_round" />
+
+            <com.servodroid.servoclock.HoloCircularProgressBar
+                android:id="@+id/holoCircularProgressBarChrono"
+                android:layout_width="256dp"
+                android:layout_height="256dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:elevation="3dp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                app:layout_constraintTop_toTopOf="@+id/imageView"
+                app:marker_progress="0"
+                app:progress="0"
+                app:progress_background_color="@color/backColor"
+                app:progress_color="@color/lineColor"
+                app:layout_constraintVertical_bias="0.513"
+                android:layout_marginLeft="8dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginRight="8dp"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewChrono"
+                android:layout_width="351dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center_horizontal"
+                android:scrollbars="vertical"
+                android:textColor="@color/colorAccent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/holoCircularProgressBarChrono"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Chronometer
+                android:id="@+id/chronometer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:foregroundTint="@color/colorAccent"
+                android:textColor="@color/colorAccent"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toBottomOf="@+id/holoCircularProgressBarChrono"
+                app:layout_constraintLeft_toLeftOf="@+id/holoCircularProgressBarChrono"
+                app:layout_constraintRight_toRightOf="@+id/holoCircularProgressBarChrono"
+                app:layout_constraintTop_toTopOf="@+id/holoCircularProgressBarChrono" />
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+</FrameLayout>
